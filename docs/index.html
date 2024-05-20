@@ -99,7 +99,7 @@
 
       <section id="introduction">
 
-        <p><dfn><code class="relevant">enhanced-boolean</code></dfn> provides a canonical way of converting <a href="http://www.lispworks.com/documentation/HyperSpec/Body/26_glo_g.htm#generalized_boolean" target="_blank">generalized booleans</a> to <a href="http://www.lispworks.com/documentation/HyperSpec/Body/t_ban.htm" target="_blank">booleans</a>.</p>
+        <p><dfn><code class="relevant">enhanced-boolean</code></dfn> provides a canonical way of converting <a href="https://www.lispworks.com/documentation/HyperSpec/Body/26_glo_g.htm#generalized_boolean" target="_blank">generalized booleans</a> to <a href="https://www.lispworks.com/documentation/HyperSpec/Body/t_ban.htm" target="_blank">booleans</a>.</p>
 
       </section>
 
@@ -121,7 +121,7 @@
           </span>
         </h1>
 
-        <p>Traditionally, if you wanted to convert a <a href="http://www.lispworks.com/documentation/HyperSpec/Body/26_glo_g.htm#generalized_boolean" target="_blank">generalized boolean</a> to a <a href="http://www.lispworks.com/documentation/HyperSpec/Body/t_ban.htm" target="_blank">boolean</a>, there were multiple equivalent ways to do it, none of which is clearly the canonical way or particularly compelling:</p>
+        <p>Traditionally, if you wanted to convert a <a href="https://www.lispworks.com/documentation/HyperSpec/Body/26_glo_g.htm#generalized_boolean" target="_blank">generalized boolean</a> to a <a href="https://www.lispworks.com/documentation/HyperSpec/Body/t_ban.htm" target="_blank">boolean</a>, there were multiple equivalent ways to do it, none of which is clearly the canonical way or particularly compelling:</p>
 
         <pre><code>(not (null <var>foo</var>))
 
@@ -142,7 +142,7 @@
 (mapcar #'%boolean '(t true nil false 0 () #() "" #\0))
 </code></pre>
 
-        <p>The crux of the problem is that <a href="http://www.lispworks.com/documentation/HyperSpec/Front/index.htm" target="_blank">the Common Lisp standard</a> unfortunately omits to specify this trivial function (which <a href="http://www.lispworks.com/documentation/lw50/CLHS/Body/11_abab.htm" target="_blank">users are forbidden from defining</a> directly on the standard symbol <a href="http://www.lispworks.com/documentation/HyperSpec/Body/t_ban.htm" target="_blank">boolean</a>):</p>
+        <p>The crux of the problem is that <a href="https://www.lispworks.com/documentation/HyperSpec/Front/index.htm" target="_blank">the Common Lisp standard</a> unfortunately omits to specify this trivial function (which <a href="https://www.lispworks.com/documentation/lw50/CLHS/Body/11_abab.htm" target="_blank">users are forbidden from defining</a> directly on the standard symbol <a href="https://www.lispworks.com/documentation/HyperSpec/Body/t_ban.htm" target="_blank">boolean</a>):</p>
 
         <pre><code>(defun boolean (generalized-boolean)
   (if generalized-boolean
@@ -151,7 +151,7 @@
 
         <p>This unfortunate omission has personally caused me extensive and repeated inconvenience and agony over the years (<em>as this greatly offends my sense of aesthetics</em>), as well as to many others I'm sure. In many programming languages, such an unfortunate limitation to a built-in construct could not be easily or satisfactorily overcome, and might even require help from the language's designers and implementors to vanquish, if ever even accomplished, even after years of begging. (For instance, many languages have a predefined list of reserved keywords with hardcoded behavior.)</p>
 
-        <p><cite class="relevant">enhanced-boolean</cite> simply provides a portable, robust, performant version of this function that acts as a drop-in replacement for <a href="http://www.lispworks.com/documentation/HyperSpec/Body/t_ban.htm" target="_blank">cl:boolean</a>.</p>
+        <p><cite class="relevant">enhanced-boolean</cite> simply provides a portable, robust, performant version of this function that acts as a drop-in replacement for <a href="https://www.lispworks.com/documentation/HyperSpec/Body/t_ban.htm" target="_blank">cl:boolean</a>.</p>
 
       </section>
 
@@ -192,7 +192,7 @@
 
             <section class="description">
               <h1>Description</h1>
-              <p>Simply <code>(:shadowing-import-from #:enhanced-boolean #:<code class="relevant"><a href="#dictionary_boolean">boolean</a></code>)</code> from your <a href="http://www.lispworks.com/documentation/HyperSpec/Body/m_defpkg.htm" target="_blank">defpackage</a>. Don't <code>(:use)</code>!</p>
+              <p>Simply <code>(:shadowing-import-from #:enhanced-boolean #:<code class="relevant"><a href="#dictionary_boolean">boolean</a></code>)</code> from your <a href="https://www.lispworks.com/documentation/HyperSpec/Body/m_defpkg.htm" target="_blank">defpackage</a>. Don't <code>(:use)</code>!</p>
             </section>
 
           </article>
@@ -220,15 +220,15 @@
             <section class="arguments-and-values">
               <h1>Arguments and Values</h1>
               <ul>
-                <li><var>generalized-boolean</var> -- A <a href="http://www.lispworks.com/documentation/HyperSpec/Body/26_glo_g.htm#generalized_boolean" target="_blank">generalized boolean</a>.</li>
-                <li><var>boolean</var> -- A <a href="http://www.lispworks.com/documentation/HyperSpec/Body/t_ban.htm" target="_blank">boolean</a>.</li>
+                <li><var>generalized-boolean</var> -- A <a href="https://www.lispworks.com/documentation/HyperSpec/Body/26_glo_g.htm#generalized_boolean" target="_blank">generalized boolean</a>.</li>
+                <li><var>boolean</var> -- A <a href="https://www.lispworks.com/documentation/HyperSpec/Body/t_ban.htm" target="_blank">boolean</a>.</li>
               </ul>
             </section>
 
             <section class="description">
               <h1>Description</h1>
               <p>Returns <code>nil</code> if <var>generalized-boolean</var> is <code>nil</code>, else returns <code>t</code>.</p>
-              <p>To help ensure proper optimization, this function is <a href="http://www.lispworks.com/documentation/HyperSpec/Body/m_declai.htm" target="_blank">declaimed</a> <a href="http://www.lispworks.com/documentation/HyperSpec/Body/d_inline.htm" target="_blank">inline</a>, its <a href="http://www.lispworks.com/documentation/HyperSpec/Body/d_ftype.htm" target="_blank">ftype</a> is declared, and an appropriate <a href="http://www.lispworks.com/documentation/HyperSpec/Body/m_define.htm" target="_blank">compiler macro</a> is defined so that sophisticated code walkers can fully optimize the code as if it had been written out by hand.</p>
+              <p>To help ensure proper optimization, this function is <a href="https://www.lispworks.com/documentation/HyperSpec/Body/m_declai.htm" target="_blank">declaimed</a> <a href="https://www.lispworks.com/documentation/HyperSpec/Body/d_inline.htm" target="_blank">inline</a>, its <a href="https://www.lispworks.com/documentation/HyperSpec/Body/d_ftype.htm" target="_blank">ftype</a> is declared, and an appropriate <a href="https://www.lispworks.com/documentation/HyperSpec/Body/m_define.htm" target="_blank">compiler macro</a> is defined so that sophisticated code walkers can fully optimize the code as if it had been written out by hand.</p>
             </section>
 
           </article>
@@ -239,7 +239,7 @@
 
             <section class="description">
               <h1>Description</h1>
-              <p>Expands to type <a href="http://www.lispworks.com/documentation/HyperSpec/Body/t_ban.htm" target="_blank">cl:boolean</a>.</p>
+              <p>Expands to type <a href="https://www.lispworks.com/documentation/HyperSpec/Body/t_ban.htm" target="_blank">cl:boolean</a>.</p>
             </section>
 
           </article>
